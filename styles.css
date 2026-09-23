@@ -1,0 +1,148 @@
+:root {
+  --bg: #0f0c0a;
+  --bg-2: #1a1512;
+  --card: #231c18;
+  --line: rgba(255, 214, 170, 0.12);
+  --text: #f6efe6;
+  --muted: #c4b3a3;
+  --accent: #e07a3d;
+  --accent-2: #f0b429;
+  --green: #2f6b3a;
+  --danger: #c94a3d;
+  --ok: #3d9a6a;
+  --radius: 22px;
+  --shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { min-height: 100%; }
+body {
+  font-family: Outfit, system-ui, sans-serif;
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(224, 122, 61, 0.18), transparent 50%),
+    radial-gradient(800px 400px at 100% 0%, rgba(47, 107, 58, 0.16), transparent 45%),
+    var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+#app { min-height: 100vh; }
+
+.wrap { max-width: 1120px; margin: 0 auto; padding: 24px 20px 80px; }
+
+.nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 0 28px;
+}
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: 0.02em; }
+.logo {
+  width: 38px; height: 38px; border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  display: grid; place-items: center; font-family: Fraunces, serif; color: #1a1008;
+}
+.nav-actions { display: flex; gap: 10px; }
+
+.btn {
+  border: 0; cursor: pointer; border-radius: 999px;
+  padding: 11px 18px; font-weight: 600; font-family: inherit;
+  transition: transform .15s ease, opacity .15s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-primary { background: linear-gradient(135deg, var(--accent), #c45a24); color: #fff; }
+.btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--line); }
+.btn-green { background: var(--green); color: #fff; }
+.btn-danger { background: var(--danger); color: #fff; }
+.btn-wide { width: 100%; }
+
+.hero { display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; padding: 20px 0 50px; }
+.hero h1 {
+  font-family: Fraunces, serif; font-size: clamp(36px, 5vw, 64px);
+  line-height: 1.05; margin: 12px 0 16px;
+}
+.kicker { color: var(--accent-2); font-weight: 600; letter-spacing: .12em; text-transform: uppercase; font-size: 12px; }
+.lead { color: var(--muted); font-size: 18px; max-width: 520px; }
+.hero-card {
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  border: 1px solid var(--line); border-radius: 28px; padding: 18px; box-shadow: var(--shadow);
+}
+.preview-photo {
+  height: 360px; border-radius: 22px; overflow: hidden; position: relative;
+  background: #2a211c center/cover no-repeat;
+}
+.preview-meta {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 18px; background: linear-gradient(transparent, rgba(0,0,0,.75));
+}
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.feature {
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px;
+}
+.feature h3 { font-family: Fraunces, serif; margin-bottom: 6px; }
+.feature p { color: var(--muted); font-size: 14px; }
+
+.auth-shell { max-width: 460px; margin: 40px auto; background: var(--card); border: 1px solid var(--line); border-radius: 28px; padding: 28px; }
+.field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+label { font-size: 13px; color: var(--muted); }
+input, select, textarea {
+  background: #16110e; border: 1px solid var(--line); color: var(--text);
+  border-radius: 14px; padding: 12px 14px; font: inherit;
+}
+textarea { min-height: 90px; resize: vertical; }
+
+.app-shell { display: grid; grid-template-columns: 240px 1fr; min-height: 100vh; }
+.side {
+  border-right: 1px solid var(--line); padding: 22px 16px; background: rgba(0,0,0,.2);
+}
+.side a, .side button.linkish {
+  display: block; width: 100%; text-align: left; background: none; border: 0;
+  color: var(--muted); padding: 10px 12px; border-radius: 12px; cursor: pointer; font: inherit;
+}
+.side a.active, .side button.linkish.active, .side a:hover, .side button.linkish:hover {
+  background: rgba(224,122,61,.12); color: var(--text);
+}
+.main { padding: 22px; }
+
+.swipe-area { max-width: 420px; margin: 0 auto; }
+.card-stack { position: relative; height: 520px; }
+.person-card {
+  position: absolute; inset: 0; border-radius: 28px; overflow: hidden;
+  background: #2a211c center/cover no-repeat; border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+.badge {
+  display: inline-flex; gap: 6px; align-items: center;
+  background: rgba(0,0,0,.45); border: 1px solid var(--line);
+  padding: 4px 10px; border-radius: 999px; font-size: 12px;
+}
+.actions { display: flex; justify-content: center; gap: 16px; margin-top: 18px; }
+.orb {
+  width: 64px; height: 64px; border-radius: 50%; border: 1px solid var(--line);
+  background: var(--card); color: var(--text); font-size: 22px; cursor: pointer;
+}
+.orb.like { background: var(--ok); border: 0; }
+.orb.nope { background: var(--danger); border: 0; }
+
+.list { display: grid; gap: 12px; }
+.match-row, .chat-row {
+  display: flex; gap: 12px; align-items: center;
+  background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 12px;
+}
+.avatar { width: 52px; height: 52px; border-radius: 16px; object-fit: cover; background: #3a2e28; }
+.chat-box { display: grid; grid-template-rows: auto 1fr auto; height: calc(100vh - 80px); }
+.bubbles { overflow: auto; padding: 16px 0; display: flex; flex-direction: column; gap: 10px; }
+.bubble { max-width: 72%; padding: 10px 14px; border-radius: 16px; }
+.me { align-self: flex-end; background: var(--accent); color: #fff; }
+.them { align-self: flex-start; background: var(--card); border: 1px solid var(--line); }
+.composer { display: flex; gap: 8px; }
+
+.filters { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 18px; }
+.toast {
+  position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+  background: #111; border: 1px solid var(--line); padding: 10px 16px; border-radius: 999px;
+}
+
+@media (max-width: 860px) {
+  .hero, .grid-3, .app-shell, .filters { grid-template-columns: 1fr; }
+  .side { display: flex; gap: 6px; overflow: auto; border-right: 0; border-bottom: 1px solid var(--line); }
+  .side button.linkish { white-space: nowrap; width: auto; }
+}
